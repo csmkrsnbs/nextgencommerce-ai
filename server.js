@@ -5,41 +5,28 @@ const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
-// 🔥 Public klasörü (frontend)
 const publicPath = path.join(__dirname, "public");
+
+// static dosyalar
 app.use(express.static(publicPath));
 
-// ✅ API ROUTES
+// test api
 app.get("/api/test", (req, res) => {
   res.json({
     status: "ok",
-    message: "API çalışıyor 🚀",
-    time: new Date(),
+    message: "API çalışıyor 🚀"
   });
 });
 
-// (opsiyonel) Stripe debug
-app.get("/api/env", (req, res) => {
-  res.json({
-    stripe: process.env.STRIPE_SECRET_KEY ? "VAR" : "YOK",
-  });
-});
-
-// 🔥 ROOT → index.html dön
+// ana sayfa
 app.get("/", (req, res) => {
   res.sendFile(path.join(publicPath, "index.html"));
 });
 
-// 🔥 SPA fallback (çok önemli)
-app.get("*", (req, res) => {
-  res.sendFile(path.join(publicPath, "index.html"));
-});
-
-// Server başlat
-app.listen(PORT, () => {
-  console.log("🚀 Server running on port " + PORT);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log("Server running on port " + PORT);
+  console.log("Public path:", publicPath);
 });
