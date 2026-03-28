@@ -1,0 +1,29 @@
+NEXTGENCOMMERCE.SHOP DEPLOY CHECKLIST
+
+1. Domain DNS:
+- A kaydı -> sunucu IP
+- www CNAME -> nextgencommerce.shop
+
+2. Sunucuda:
+- Node.js kurulu
+- Nginx kurulu
+- PM2 kurulu
+
+3. Proje:
+- npm install
+- .env doldur
+- pm2 start server.js --name nextgencommerce-ai
+
+4. Stripe:
+- Success URL otomatik olarak https://nextgencommerce.shop/
+- Webhook: https://nextgencommerce.shop/api/stripe/webhook
+
+5. SSL:
+- certbot ile aktif et
+
+6. Test:
+- kayıt ol
+- giriş yap
+- ücretsiz kredi kullan
+- test mod Stripe ile ödeme yap
+- webhook sonrası kredi yüklendi mi kontrol et

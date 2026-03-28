@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NextGenCommerce AI | Mesaj Yazıcı Pro</title>
+  <meta
+    name="description"
+    content="AI destekli profesyonel mesaj üretici. Flört, müşteri, işveren ve sosyal konuşmalar için hızlı mesaj ve alt başlık üret."
+  />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-wrap">
+        <div class="brand-badge">AI</div>
+        <div>
+          <div class="brand-title">NextGenCommerce AI</div>
+          <div class="brand-subtitle">Profesyonel mesaj üretim platformu</div>
+        </div>
+      </div>
+
+      <div class="header-trust">
+        <span class="trust-chip">Mobil uyumlu</span>
+        <span class="trust-chip">Güvenli ödeme</span>
+        <span class="trust-chip">Hızlı kullanım</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-shell">
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-tag">AI destekli yazım deneyimi</div>
+        <h1>Daha hızlı, daha net ve daha güven veren mesajlar üret</h1>
+        <p>
+          Flört, müşteri, işveren veya sosyal konuşmalar için kısa bilgi ver;
+          sistem sana gönderilebilir mesajı ve konuya uygun alt başlıkları hazırlasın.
+        </p>
+
+        <div class="hero-points">
+          <div class="hero-point">⚡ Saniyeler içinde üretim</div>
+          <div class="hero-point">🔒 Güvenli ödeme altyapısı</div>
+          <div class="hero-point">📱 Telefon ve masaüstü uyumlu</div>
+        </div>
+      </div>
+    </section>
+
+    <main class="container">
+      <!-- SOL -->
+      <section class="card auth-card">
+        <h2>Hesabın</h2>
+        <p class="subtitle">Kayıt ol, giriş yap, kredi kullan ve paket satın al.</p>
+
+        <div id="authArea">
+          <div class="tabs">
+            <button class="tab active" data-tab="login" type="button">Giriş</button>
+            <button class="tab" data-tab="register" type="button">Kayıt</button>
+          </div>
+
+          <form id="loginForm" class="form">
+            <label>
+              Email
+              <input type="email" name="email" required />
+            </label>
+
+            <label>
+              Şifre
+              <input type="password" name="password" required />
+            </label>
+
+            <button type="submit">Giriş Yap</button>
+          </form>
+
+          <form id="registerForm" class="form hidden">
+            <label>
+              Email
+              <input type="email" name="email" required />
+            </label>
+
+            <label>
+              Şifre
+              <input type="password" name="password" required />
+            </label>
+
+            <button type="submit">Kayıt Ol</button>
+          </form>
+        </div>
+
+        <div id="userArea" class="hidden">
+          <div class="user-box">
+            <p><strong>Email:</strong> <span id="userEmail">-</span></p>
+            <p><strong>Paket:</strong> <span id="userPlan">-</span></p>
+            <p><strong>Kredi:</strong> <span id="userCredits">-</span></p>
+          </div>
+
+          <div class="row-actions">
+            <button id="logoutBtn" type="button">Çıkış Yap</button>
+          </div>
+        </div>
+
+        <div id="authStatus" class="status"></div>
+        <div id="paymentBanner" class="banner hidden"></div>
+
+        <div class="mini-trust-box">
+          <div class="mini-trust-item">
+            <strong>Basit kullanım</strong>
+            <span>Karışık değil, hızlı ve direkt kullanıma uygundur.</span>
+          </div>
+
+          <div class="mini-trust-item">
+            <strong>Kredi mantığı</strong>
+            <span>Her üretimde kredi düşer, pakete göre kullanım artar.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ORTA -->
+      <section class="card">
+        <div class="section-head">
+          <div>
+            <h2>Mesaj Üret</h2>
+            <p class="subtitle">Kısa detay ver, sistem sana mesajı oluştursun.</p>
+          </div>
+          <div class="section-badge">En çok kullanılan alan</div>
+        </div>
+
+        <form id="messageForm" class="form">
+          <label>
+            Kime yazılacak?
+            <select name="target" required>
+              <option value="">Seç</option>
+              <option value="flört">Flört</option>
+              <option value="müşteri">Müşteri</option>
+              <option value="işveren">İşveren</option>
+              <option value="arkadaş">Arkadaş</option>
+            </select>
+          </label>
+
+          <label>
+            Karşı tarafın cinsiyeti
+            <select name="gender">
+              <option value="">Belirtmek istemiyorum</option>
+              <option value="kadın">Kadın</option>
+              <option value="erkek">Erkek</option>
+            </select>
+          </label>
+
+          <label>
+            Amaç ne?
+            <select name="goal" required>
+              <option value="">Seç</option>
+              <option value="ilk mesaj atmak">İlk mesaj atmak</option>
+              <option value="sohbeti devam ettirmek">Sohbeti devam ettirmek</option>
+              <option value="satış yapmak">Satış yapmak</option>
+              <option value="hatırlatma yapmak">Hatırlatma yapmak</option>
+              <option value="buluşma teklif etmek">Buluşma teklif etmek</option>
+            </select>
+          </label>
+
+          <label>
+            Ton
+            <select name="tone" required>
+              <option value="">Seç</option>
+              <option value="cool">Cool</option>
+              <option value="romantik">Romantik</option>
+              <option value="profesyonel">Profesyonel</option>
+              <option value="karizmatik">Karizmatik</option>
+            </select>
+          </label>
+
+          <label>
+            Kısa durum
+            <textarea
+              name="context"
+              rows="5"
+              placeholder="Örn: Daha önce konuştuk ama sohbet durdu."
+              required
+            ></textarea>
+          </label>
+
+          <button type="submit" id="generateBtn">Mesaj Oluştur</button>
+        </form>
+
+        <div id="generateStatus" class="status"></div>
+        <pre id="output" class="output">Burada sonuç görünecek.</pre>
+        <button id="copyBtn" class="copy-btn" type="button">Kopyala</button>
+
+        <hr class="section-divider" />
+
+        <h2>Alt Başlık Üret</h2>
+        <p class="subtitle">Konuya göre dikkat çekici alt başlıklar üret.</p>
+
+        <div class="form">
+          <label>
+            Konu
+            <input
+              id="topicInput"
+              type="text"
+              placeholder="Örn: Instagram’da müşteri bulma"
+            />
+          </label>
+
+          <button id="headlineBtn" type="button">Alt başlık üret</button>
+        </div>
+
+        <div id="headlineStatus" class="status"></div>
+        <pre id="headlineResult" class="output">Burada alt başlıklar görünecek.</pre>
+      </section>
+
+      <!-- SAĞ -->
+      <section class="card">
+        <h2>Paketler</h2>
+        <div id="packsList" class="packs-list">
+          <p class="muted">Giriş yaptıktan sonra paketler görünecek.</p>
+        </div>
+
+        <h2 class="section-gap">Son Geçmiş</h2>
+        <div id="historyList" class="history-list">
+          <p class="muted">Henüz kayıt yok.</p>
+        </div>
+
+        <h2 class="section-gap">Ödeme Geçmişi</h2>
+        <div id="paymentsList" class="history-list">
+          <p class="muted">Henüz ödeme yok.</p>
+        </div>
+      </section>
+    </main>
+
+    <section class="faq-shell" id="sss">
+      <div class="faq-card">
+        <div class="section-head">
+          <div>
+            <h2>Sık Sorulan Sorular</h2>
+            <p class="subtitle">Platform hakkında en çok merak edilenler</p>
+          </div>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Bu sistem ne yapıyor?</summary>
+            <p>
+              AI destekli olarak mesaj üretir ve konuya göre alt başlık önerileri sunar.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Kredi nasıl çalışıyor?</summary>
+            <p>
+              Her üretimde belirlenen kadar kredi düşer. Kredi bittiğinde yeni paket satın alman gerekir.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Ödeme güvenli mi?</summary>
+            <p>
+              Evet. Ödeme işlemleri Stripe üzerinden yürütülür. Kart bilgileri bu sistemde tutulmaz.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Mobilde rahat çalışır mı?</summary>
+            <p>
+              Evet. Tasarım mobil uyumlu olacak şekilde düzenlenmiştir.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Üretilen metinleri direkt kullanabilir miyim?</summary>
+            <p>
+              Evet, ama göndermeden önce kısa bir kontrol yapman önerilir.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Kimler için uygundur?</summary>
+            <p>
+              Flört konuşmaları, müşteri mesajları, teklif takibi, ödeme hatırlatmaları ve sosyal yazışmalar için uygundur.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="brand-title">NextGenCommerce AI</div>
+        <p>
+          AI destekli mesaj ve içerik üretim platformu. Hızlı kullanım, mobil uyumluluk ve güven veren arayüz ile tasarlandı.
+        </p>
+      </div>
+
+      <div class="footer-grid">
+        <div>
+          <h3>Ürün</h3>
+          <a href="/">Ana Sayfa</a>
+          <a href="/#sss">SSS</a>
+          <a href="/">Mesaj Üret</a>
+          <a href="/">Paketler</a>
+        </div>
+
+        <div>
+          <h3>Güven</h3>
+          <span>Stripe ödeme altyapısı</span>
+          <span>SSL güvenliği</span>
+          <span>Mobil uyumlu tasarım</span>
+          <a href="/privacy.html">Gizlilik Politikası</a>
+          <a href="/terms.html">Kullanım Şartları</a>
+        </div>
+
+        <div>
+          <h3>İletişim</h3>
+          <a href="mailto:info@nextgencommerce.shop">info@nextgencommerce.shop</a>
+          <span>nextgencommerce.shop</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 NextGenCommerce AI. Tüm hakları saklıdır.
+    </div>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
