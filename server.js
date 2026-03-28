@@ -6,20 +6,29 @@ const sqlite3 = require("sqlite3").verbose();
 require("dotenv").config();
 
 const app = express();
-const cors = require('cors');
+const cors = require("cors");
 
 app.use(cors({
   origin: [
-    'http://localhost:3000',
-    'http://127.0.0.1:3000',
-    'https://nextgencommerce.shop',
-    'https://www.nextgencommerce.shop'
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "https://nextgencommerce.shop",
+    "https://www.nextgencommerce.shop"
   ],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
-console.log("STRIPE KEY VAR MI", !!process.env.STRIPE_SECRET_KEY);
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+
+const stripeKey = (process.env.STRIPE_SECRET_KEY || "").trim();
+console.log("STRIPE KEY VAR MI", !!stripeKey);
+console.log("STRIPE KEY LEN", stripeKey.length);
+
+if (!stripeKey) {
+  throw new Error("Missing STRIPE_SECRET_KEY");
+}
+
+const stripe = require("stripe")(stripeKey);
+
 const PORT = process.env.PORT || 3000;
 const APP_URL = process.env.APP_URL || `http://localhost:${PORT}`;
 const JWT_SECRET = process.env.JWT_SECRET || "super-secret-key-change-this";
