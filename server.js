@@ -18,7 +18,7 @@ app.use(cors({
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
-
+console.log("STRIPE KEY VAR MI", !!process.env.STRIPE_SECRET_KEY);
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const PORT = process.env.PORT || 3000;
 const APP_URL = process.env.APP_URL || `http://localhost:${PORT}`;
